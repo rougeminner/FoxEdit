@@ -21,6 +21,9 @@ if #args == 0 then
   return
 end
 
+if args[1] == "-G" then
+io.stderr:write("This Mode is not supported yet please to -T")
+elseif args[1] == "-T" then
 local filename = shell.resolve(args[1])
 
 local readonly = options.r or fs.get(filename) == nil or fs.get(filename).isReadOnly()
@@ -687,3 +690,7 @@ end
 
 term.clear()
 term.setCursorBlink(false)
+ 
+else
+io.stderr:write("Please enter -G or -T as a mode or it won't work anymore")
+end
