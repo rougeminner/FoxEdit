@@ -17,7 +17,7 @@ local gpu = term.gpu()
 
 local args, options = shell.parse(...)
 if #args == 0 then
-  io.write("Usage: edit <filename>")
+  io.write("Usage: edit <-T, -G> <filename>")
   return
 end
 
@@ -692,5 +692,5 @@ term.clear()
 term.setCursorBlink(false)
  
 else
-io.stderr:write("Please enter -G or -T as a mode or it won't work anymore")
+io.stderr:write("Please enter -G or -T as a mode or it won't work anymore, -G for GUI -T for Text based")
 end
